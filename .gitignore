@@ -55,5 +55,3 @@ next-env.d.ts
 
 # ─── Obsidian / SecondBrain (knowledge base — não faz parte do site) ─────────
 SecondBrain/
-
-public/
