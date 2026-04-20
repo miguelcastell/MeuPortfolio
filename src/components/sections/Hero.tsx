@@ -1,8 +1,9 @@
 'use client'
 
-import Link from 'next/link'
-import { ArrowRight, Github, Linkedin } from 'lucide-react'
+import { ArrowRight, Github, Linkedin, MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { useState } from 'react'
 
 const containerVariants = {
   hidden: {},
@@ -16,25 +17,51 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] } },
 }
 
+const scrollTo = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
+
 export function Hero() {
+  const [imageError, setImageError] = useState(false)
+
   return (
-    <section className="relative min-h-[92vh] flex items-center section-padding overflow-hidden">
-      {/* Background blobs */}
+    <section
+      id="inicio"
+      className="relative min-h-[96vh] flex items-center section-padding overflow-hidden"
+    >
+      {/* Background shapes */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
-          className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full opacity-[0.06] animate-blob"
-          style={{ background: 'radial-gradient(circle, var(--primary), transparent)' }}
+          className="absolute -top-48 -left-48 w-[750px] h-[750px] rounded-full opacity-[0.08] animate-blob"
+          style={{ background: 'radial-gradient(circle, #0E7490, transparent)' }}
         />
         <div
-          className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full opacity-[0.05] animate-blob"
+          className="absolute -bottom-48 -right-48 w-[650px] h-[650px] rounded-full opacity-[0.07] animate-blob"
           style={{
-            background: 'radial-gradient(circle, var(--secondary), transparent)',
+            background: 'radial-gradient(circle, #14B8A6, transparent)',
             animationDelay: '3s',
+          }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full opacity-[0.04] animate-blob"
+          style={{
+            background: 'radial-gradient(circle, #F97316, transparent)',
+            animationDelay: '6s',
+          }}
+        />
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              'linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
           }}
         />
       </div>
 
-      <div className="container-content relative z-10 py-24">
+      <div className="container-content relative z-10 py-28">
+        <div className="flex items-center justify-between gap-10 xl:gap-16">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -42,83 +69,91 @@ export function Hero() {
           className="max-w-4xl"
         >
           {/* Eyebrow */}
-          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-8">
-            <span className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border bg-surface text-xs font-medium text-text-muted">
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 mb-8">
+            <span className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#334155] bg-[#1E293B]/80 text-xs font-medium text-text-muted">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
               Disponível para oportunidades
             </span>
-            <span className="text-xs text-text-muted hidden sm:block">Toledo, PR — Brasil</span>
+            <span className="flex items-center gap-1.5 text-xs text-text-muted">
+              <MapPin size={12} aria-hidden="true" />
+              Toledo, PR — Brasil
+            </span>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="font-display font-bold leading-[1.08] tracking-tight mb-6"
-            style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)' }}
+            className="font-display font-bold leading-[1.05] tracking-tight mb-6"
+            style={{ fontSize: 'clamp(2.6rem, 6.5vw, 4.8rem)' }}
           >
-            Transformo dados brutos{' '}
+            Hello World. Eu sou o{''}
             <br className="hidden sm:block" />
-            em{' '}
-            <span className="text-gradient">decisões concretas.</span>
+            {' '}
+            <span className="text-gradient">Miguel!</span>
           </motion.h1>
+
+          {/* Stack line */}
+          <motion.p
+            variants={itemVariants}
+            className="text-lg md:text-xl font-medium text-text-muted max-w-2xl mb-3"
+          >
+            Python · SQL · Engenharia e Ciência de Dados · Machine Learning
+          </motion.p>
 
           {/* Subtitle */}
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-text-muted max-w-2xl leading-relaxed mb-10"
+            className="text-base text-text-muted max-w-2xl leading-relaxed mb-10"
           >
-            Analista de Sistemas e graduando em IA com foco em{' '}
-            <strong className="text-text-main font-semibold">Engenharia de Dados</strong> e{' '}
-            <strong className="text-text-main font-semibold">Machine Learning</strong>. Construo
-            pipelines, dashboards e sistemas de recomendação que geram impacto real.
+            Analista de Sistemas e graduando em IA.
           </motion.p>
 
           {/* CTAs */}
           <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-medium text-sm transition-all duration-200 hover:bg-[#0c6578] hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5"
+            <button
+              onClick={() => scrollTo('projetos')}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-medium text-sm transition-all duration-200 hover:bg-[#0c6578] hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5"
             >
               Ver projetos
               <ArrowRight size={16} />
-            </Link>
-            <Link
-              href="/sobre"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border text-text-main font-medium text-sm transition-all duration-200 hover:border-primary/40 hover:text-primary hover:-translate-y-0.5"
+            </button>
+            <button
+              onClick={() => scrollTo('contato')}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#334155] text-text-main font-medium text-sm transition-all duration-200 hover:border-primary/50 hover:text-[#22D3EE] hover:-translate-y-0.5 hover:bg-primary/5"
             >
-              Sobre mim
-            </Link>
-            <div className="flex items-center gap-3 ml-2">
+              Entrar em contato
+            </button>
+            <div className="flex items-center gap-2.5 ml-1">
               <a
                 href="https://github.com/miguelcastell"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="p-2 rounded-lg border border-border text-text-muted hover:text-text-main hover:border-border-muted transition-colors"
+                className="p-2.5 rounded-lg border border-[#334155] text-text-muted hover:text-text-main hover:border-[#475569] transition-colors"
               >
-                <Github size={18} />
+                <Github size={17} />
               </a>
               <a
-                href="https://linkedin.com/in/miguel-mantoan-castellani"
+                href="https://www.linkedin.com/in/miguel-mantoan-castellani-744304324/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="p-2 rounded-lg border border-border text-text-muted hover:text-text-main transition-colors"
+                className="p-2.5 rounded-lg border border-[#334155] text-text-muted hover:text-text-main hover:border-[#475569] transition-colors"
               >
-                <Linkedin size={18} />
+                <Linkedin size={17} />
               </a>
             </div>
           </motion.div>
 
-          {/* Quick stats */}
+          {/* Stats */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap gap-6 mt-16 pt-8 border-t border-border/60"
+            className="flex flex-wrap gap-8 mt-16 pt-8 border-t border-[#334155]/60"
           >
             {[
               { value: '20+', label: 'Projetos ativos' },
               { value: '1+', label: 'Ano de experiência' },
-              { value: 'Python · SQL · IA', label: 'Stack principal' },
+              { value: 'Python · SQL · ML', label: 'Stack principal' },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="font-display font-bold text-2xl text-text-main">{stat.value}</div>
@@ -127,18 +162,44 @@ export function Hero() {
             ))}
           </motion.div>
         </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.25, duration: 0.6 }}
+            className="hidden lg:flex items-center justify-center"
+          >
+            <div className="relative w-72 h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden border border-[#334155]/70 ring-4 ring-[#0E7490]/20 shadow-[0_12px_60px_rgba(0,0,0,0.35)]">
+              {!imageError ? (
+                <Image
+                  src="/images/miguel-hero.jpg"
+                  alt="Foto de Miguel Mantoan Castellani"
+                  fill
+                  sizes="(max-width: 1280px) 288px, 320px"
+                  className="object-cover"
+                  onError={() => setImageError(true)}
+                  priority
+                />
+              ) : (
+                <div className="w-full h-full bg-[#1E293B] flex items-center justify-center">
+                  <span className="font-display font-bold text-5xl text-[#22D3EE]">MC</span>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll hint */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-muted"
         aria-hidden="true"
       >
-        <span className="text-xs font-medium tracking-widest uppercase">scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-border to-transparent" />
+        <span className="text-[10px] font-medium tracking-[0.2em] uppercase opacity-50">scroll</span>
+        <div className="w-px h-10 bg-gradient-to-b from-[#334155] to-transparent" />
       </motion.div>
     </section>
   )

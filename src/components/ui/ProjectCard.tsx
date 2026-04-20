@@ -79,25 +79,6 @@ export function ProjectCard({ project, variant = 'default', index = 0 }: Project
               {project.description}
             </p>
 
-            {/* Metrics */}
-            {project.metrics.length > 0 && (
-              <div className="grid grid-cols-3 gap-2 py-3 border-t border-b border-border/60">
-                {project.metrics.slice(0, 3).map((m, i) => (
-                  <div key={i} className="text-center">
-                    <div
-                      className="text-base font-bold font-display"
-                      style={{ color: project.accentColor }}
-                    >
-                      {m.value}
-                    </div>
-                    <div className="text-[10px] text-text-muted leading-tight mt-0.5">
-                      {m.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
             {/* Stack tags */}
             <div className="flex flex-wrap gap-1.5">
               {project.stack.slice(0, 4).map((tech) => (
@@ -116,7 +97,7 @@ export function ProjectCard({ project, variant = 'default', index = 0 }: Project
                 href={`/projects/${project.slug}`}
                 className="flex items-center gap-1.5 text-sm font-medium text-primary hover:underline underline-offset-4 transition-colors"
               >
-                Ver case study
+                Ver sobre
                 <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               {project.github && (

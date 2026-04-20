@@ -117,21 +117,6 @@ function WideProjectCard({ project, index }: { project: Project; index: number }
             <p className="text-text-muted leading-relaxed">{project.description}</p>
           </div>
 
-          {/* Metrics */}
-          <div className="grid grid-cols-3 gap-3 py-4 border-t border-b border-border/60">
-            {project.metrics.slice(0, 3).map((m, i) => (
-              <div key={i}>
-                <div
-                  className="text-xl font-bold font-display"
-                  style={{ color: project.accentColor }}
-                >
-                  {m.value}
-                </div>
-                <div className="text-[10px] text-text-muted leading-tight mt-0.5">{m.label}</div>
-              </div>
-            ))}
-          </div>
-
           {/* Stack */}
           <div className="flex flex-wrap gap-1.5">
             {project.stack.map((tech) => (
@@ -146,7 +131,7 @@ function WideProjectCard({ project, index }: { project: Project; index: number }
               href={`/projects/${project.slug}`}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-medium transition-all hover:bg-[#0c6578]"
             >
-              Ver case study <ArrowRight size={14} />
+              Ver sobre <ArrowRight size={14} />
             </Link>
             {project.github && (
               <a

@@ -10,10 +10,36 @@ export const metadata: Metadata = {
 }
 
 const skills = {
-  'Dados & ETL': ['Python (Pandas, NumPy)', 'SQL Avançado / PL/pgSQL', 'ETL/ELT', 'Apache Airflow', 'PostgreSQL', 'Parquet'],
-  'BI & Visualização': ['Power BI', 'Streamlit', 'Plotly', 'Excel Avançado (Power Query)'],
-  'IA & Machine Learning': ['Scikit-learn', 'TensorFlow / Keras', 'NLP', 'Computer Vision (OpenCV)', 'Recomendação'],
-  'Ferramentas & DevOps': ['Git / GitHub', 'PowerShell', 'SAP', 'TypeScript', 'HTML5 / CSS3'],
+  'Dados & ETL': [
+    'Pandas',
+    'PySpark',
+    'Apache Spark',
+    'Apache Airflow',
+    'SQL',
+    'Data Warehouse',
+    'Data Lake',
+    'Databricks',
+  ],
+  'BI & Visualização': ['Power BI', 'Plotly', 'Seaborn', 'Looker', 'NumPy', 'Excel'],
+  'IA & Machine Learning': [
+    'Scikit-learn',
+    'TensorFlow',
+    'Visão Computacional',
+    'Clustering',
+    'NLP',
+  ],
+  'Banco de Dados': ['PostgreSQL', 'SQLite', 'DuckDB', 'MySQL'],
+  'DevOps e Ferramentas': [
+    'Git',
+    'GitHub',
+    'VS Code',
+    'Figma',
+    'Photoshop',
+    'Trello',
+    'PyCharm',
+    'Postman',
+  ],
+  Desenvolvimento: ['Python', 'HTML', 'CSS', 'JavaScript', 'Web Scraping'],
 }
 
 const courses = [
@@ -69,11 +95,11 @@ export default function SobrePage() {
                 <h2 className="font-display font-semibold text-sm text-text-main mb-5">Contato</h2>
                 <div className="flex flex-col gap-3">
                   <a
-                    href="mailto:miguelmscastell@hotmail.com"
+                    href="mailto:miguelmcastell@hotmail.com"
                     className="flex items-center gap-3 text-sm text-text-muted hover:text-primary transition-colors"
                   >
                     <Mail size={15} className="flex-shrink-0" />
-                    miguelmscastell@hotmail.com
+                    miguelmcastell@hotmail.com
                   </a>
                   <a
                     href="https://github.com/miguelcastell"
@@ -85,13 +111,13 @@ export default function SobrePage() {
                     github.com/miguelcastell
                   </a>
                   <a
-                    href="https://linkedin.com/in/miguel-mantoan-castellani"
+                    href="https://www.linkedin.com/in/miguel-mantoan-castellani-744304324/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-sm text-text-muted hover:text-primary transition-colors"
                   >
                     <Linkedin size={15} className="flex-shrink-0" />
-                    linkedin.com/in/miguel-mantoan-castellani
+                    linkedin.com/in/miguel-mantoan-castellani-744304324
                   </a>
                 </div>
 
@@ -193,11 +219,11 @@ export default function SobrePage() {
               ML. Me envie uma mensagem.
             </p>
             <a
-              href="mailto:miguelmscastell@hotmail.com"
+              href="mailto:miguelmcastell@hotmail.com"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-white font-medium hover:bg-[#0c6578] transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20"
             >
               <Mail size={16} />
-              miguelmscastell@hotmail.com
+              miguelmcastell@hotmail.com
             </a>
           </div>
         </div>

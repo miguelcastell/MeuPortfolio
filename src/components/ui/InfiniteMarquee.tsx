@@ -36,7 +36,12 @@ export function InfiniteMarquee({
       <div
         className="marquee-inner flex items-center gap-3 w-max"
         style={{
-          animation: `marquee ${duration} linear infinite ${reverse ? 'reverse' : 'normal'}`,
+          animationName: 'marquee',
+          animationDuration: duration,
+          animationTimingFunction: 'linear',
+          animationIterationCount: 'infinite',
+          animationDirection: reverse ? 'reverse' : 'normal',
+          willChange: 'transform',
         }}
       >
         {/* Render twice for seamless loop */}

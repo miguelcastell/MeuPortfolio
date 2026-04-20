@@ -8,8 +8,8 @@
 - **Formação:** Graduando em Inteligência Artificial — Faculdade Donaduzzi (Biopark), 3º período
 - **Objetivo de carreira:** Senior Data Engineer ou ML Engineer; construir produtos próprios baseados em dados e IA
 - **GitHub:** github.com/miguelcastell
-- **LinkedIn:** linkedin.com/in/miguel-mantoan-castellani
-- **Email:** miguelmscastell@hotmail.com
+- **LinkedIn:** linkedin.com/in/miguel-mantoan-castellani-744304324
+- **Email:** miguelmcastell@hotmail.com
 
 ---
 
@@ -81,7 +81,6 @@ Cada arquivo de projeto usa um template padrão: Descrição, Linguagem, Reposit
 
 | Projeto | Stack | Status |
 |---------|-------|--------|
-| **arnis** | Rust | Geração de locais reais do mundo no Minecraft via OpenStreetMap. Em progresso. |
 | **Vitally** | PHP + MySQL | Plataforma web de gestão de ordens de serviço. Em progresso. |
 | **WebScrapping** | Python | Scripts de extração de dados com BeautifulSoup/Selenium. Em progresso. |
 | **app-notifications** | Python | Envio e gerenciamento de notificações automáticas. Em progresso. |
@@ -89,8 +88,6 @@ Cada arquivo de projeto usa um template padrão: Descrição, Linguagem, Reposit
 | **nature-flow-command** | TypeScript | Ferramenta CLI para automação de workflows no terminal. Em progresso. |
 | **Encoding-CSV** | Python | Script de reinterpretação de encoding Latin-1 → UTF-8. ✅ Concluído |
 | **PythonLearn** | Jupyter | Repositório de aprendizado Python: fundamentos → DE → IA. Em progresso. |
-| **agentscope** | Python | Framework para construção de agentes IA com foco em observabilidade. Em progresso. |
-| **miguelcastell** | Markdown | README de perfil do GitHub — showcase público. Em progresso. |
 | **Portfolio-Blueprint** | Markdown | Planejamento estratégico do site portfólio. |
 
 ---

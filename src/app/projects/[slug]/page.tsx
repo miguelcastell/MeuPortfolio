@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return { title: 'Projeto não encontrado' }
 
   return {
-    title: `${project.title} — Case Study`,
+    title: `${project.title} — Sobre`,
     description: project.description,
     openGraph: {
       title: `${project.title} | Miguel Castellani`,
@@ -59,17 +59,18 @@ export default async function ProjectPage({ params }: Props) {
       <div
         className="relative h-56 md:h-72 overflow-hidden"
         style={{
-          background: `linear-gradient(135deg, ${project.accentColor}20 0%, ${project.accentColor}08 60%, transparent)`,
+          background:
+            'linear-gradient(135deg, rgba(14,116,144,0.16) 0%, rgba(20,184,166,0.08) 55%, transparent 100%)',
         }}
       >
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.07]">
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.07] pointer-events-none" aria-hidden="true">
           <div
             className="w-96 h-96 rounded-full"
-            style={{ background: `radial-gradient(circle, ${project.accentColor}, transparent)` }}
+            style={{ background: 'radial-gradient(circle, #0E7490, transparent)' }}
           />
         </div>
 
-        <div className="container-content section-padding h-full flex flex-col justify-end pb-8">
+        <div className="container-content section-padding relative z-10 h-full flex flex-col justify-end pb-8">
           <Link
             href="/projects"
             className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-text-main mb-6 transition-colors"
@@ -120,25 +121,6 @@ export default async function ProjectPage({ params }: Props) {
                 </li>
               ))}
             </ul>
-
-            {/* Metrics */}
-            <h2>Métricas de Sucesso</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 not-prose my-6">
-              {project.metrics.map((m, i) => (
-                <div
-                  key={i}
-                  className="glass-card rounded-xl p-4 text-center"
-                >
-                  <div
-                    className="text-3xl font-bold font-display mb-1"
-                    style={{ color: project.accentColor }}
-                  >
-                    {m.value}
-                  </div>
-                  <div className="text-xs text-text-muted">{m.label}</div>
-                </div>
-              ))}
-            </div>
 
             {/* Lessons */}
             <h2>Lições Aprendidas</h2>

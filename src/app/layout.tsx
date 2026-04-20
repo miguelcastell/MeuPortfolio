@@ -3,6 +3,7 @@ import { Space_Grotesk, Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/ui/Navigation'
 import { Footer } from '@/components/layout/Footer'
+import { BackToTop } from '@/components/ui/BackToTop'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -62,7 +63,7 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Miguel Mantoan Castellani',
   url: 'https://github.com/miguelcastell',
-  email: 'miguelmscastell@hotmail.com',
+  email: 'miguelmcastell@hotmail.com',
   jobTitle: 'Analista de Sistemas | Engenharia de Dados | Machine Learning',
   description:
     'Analista de Sistemas e estudante de IA focado em Engenharia de Dados e Machine Learning. Graduando em Inteligência Artificial na Faculdade Donaduzzi (Biopark).',
@@ -70,24 +71,30 @@ const jsonLd = {
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'Faculdade Donaduzzi — Biopark' },
   sameAs: [
     'https://github.com/miguelcastell',
-    'https://linkedin.com/in/miguel-mantoan-castellani',
+    'https://www.linkedin.com/in/miguel-mantoan-castellani-744304324/',
   ],
   knowsAbout: ['Python', 'SQL', 'Data Engineering', 'Machine Learning', 'ETL', 'Power BI', 'Apache Airflow'],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${spaceGrotesk.variable} ${sourceSans.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${spaceGrotesk.variable} ${sourceSans.variable}`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   )

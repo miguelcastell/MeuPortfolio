@@ -1,25 +1,28 @@
 import type { Metadata } from 'next'
 import { Hero } from '@/components/sections/Hero'
-import { FeaturedProjects } from '@/components/sections/FeaturedProjects'
-import { TechStack } from '@/components/sections/TechStack'
+import { ProjectsSection } from '@/components/sections/ProjectsSection'
+import { AboutSection } from '@/components/sections/AboutSection'
+import { StudiesSection } from '@/components/sections/StudiesSection'
 import { Timeline } from '@/components/sections/Timeline'
-import { getFeaturedProjects } from '@/lib/projects'
+import { TechStack } from '@/components/sections/TechStack'
+import { ContactSection } from '@/components/sections/ContactSection'
 
 export const metadata: Metadata = {
-  title: 'Miguel Mantoan Castellani — Engenharia de Dados & IA',
+  title: 'Porfólio',
   description:
-    'Portfólio de Miguel Mantoan Castellani — Analista de Sistemas especializado em Engenharia de Dados, Machine Learning e Automação. Transformo dados brutos em decisões concretas.',
+    'Portfólio de Miguel Mantoan Castellani — Analista de Sistemas especializado em Engenharia de Dados, Machine Learning e Automação. Transformo dados brutos em disões concretas.',
 }
 
 export default function HomePage() {
-  const featured = getFeaturedProjects()
-
   return (
     <>
       <Hero />
-      <FeaturedProjects projects={featured} />
-      <TechStack />
+      <ProjectsSection />
+      <AboutSection />
+      <StudiesSection />
       <Timeline />
+      <TechStack />
+      <ContactSection />
     </>
   )
 }
