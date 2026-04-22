@@ -13,8 +13,8 @@ const timeline = [
     current: true,
     highlights: [
       'Dashboards internos para apoio à decisão gerencial',
-      'ETL: tratamento e padronização de dados para sistemas internos',
-      'Automação de processos com Python e integração entre plataformas',
+      'Manutenção Hardware e Software',
+      'Automação de processos básicos com Python e integração entre plataformas',
       'Identificação e correção de falhas em parametrizações (Questor, Tarefa, Integrador)',
     ],
   },
@@ -38,8 +38,8 @@ const timeline = [
     location: 'Toledo, PR',
     current: true,
     highlights: [
-      '3º período — foco em ML, DE e IA aplicada',
-      'Projetos práticos integrando teoria e engenharia de software',
+      '3º período — foco em ML, Visão Computacional, WebScraping e IA aplicada',
+      'Projetos práticos integrando pipeline de dados, modelos de ML, WebScrapping e visão computacional.',
     ],
   },
 ]

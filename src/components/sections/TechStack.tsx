@@ -65,6 +65,7 @@ const coreSkills = [
     icon: Database,
     label: 'Engenharia de Dados',
     description: 'Pipelines ETL/ELT, modelagem dimensional e orquestração com Airflow.',
+    highlights: ['ETL / ELT', 'Airflow', 'SQL'],
     color: '#22D3EE',
     bg: 'rgba(14, 116, 144, 0.12)',
     border: 'rgba(14, 116, 144, 0.28)',
@@ -73,6 +74,7 @@ const coreSkills = [
     icon: Brain,
     label: 'Machine Learning',
     description: 'Classificação, regressão, clustering, recomendação e visão computacional.',
+    highlights: ['Scikit-learn', 'TensorFlow/Keras', 'NLP e CV'],
     color: '#2DD4BF',
     bg: 'rgba(20, 184, 166, 0.12)',
     border: 'rgba(20, 184, 166, 0.28)',
@@ -81,6 +83,7 @@ const coreSkills = [
     icon: BarChart3,
     label: 'Business Intelligence',
     description: 'Dashboards, KPIs automatizados e análise de dados para decisões de negócio.',
+    highlights: ['Power BI', 'Modelagem de métricas', 'Storytelling com dados'],
     color: '#22D3EE',
     bg: 'rgba(14, 116, 144, 0.12)',
     border: 'rgba(14, 116, 144, 0.28)',
@@ -89,6 +92,7 @@ const coreSkills = [
     icon: Zap,
     label: 'Automação',
     description: 'Scripts Python e PowerShell, geração de documentos e integração entre sistemas.',
+    highlights: ['Python + APIs', 'PowerShell', 'Automação de processos'],
     color: '#FB923C',
     bg: 'rgba(249, 115, 22, 0.12)',
     border: 'rgba(249, 115, 22, 0.28)',
@@ -119,9 +123,9 @@ export function TechStack() {
 
       {/* Marquee rows */}
       <div className="flex flex-col gap-3 mb-16">
-        <InfiniteMarquee items={row1} speed="slow" reverse />
-        <InfiniteMarquee items={row2} speed="slow" />
-        <InfiniteMarquee items={row3} speed="slow" reverse />
+        <InfiniteMarquee items={row1} speed="ultraSlow" reverse />
+        <InfiniteMarquee items={row2} speed="ultraSlow" />
+        <InfiniteMarquee items={row3} speed="ultraSlow" reverse />
       </div>
 
       {/* Core skills grid */}
@@ -150,6 +154,18 @@ export function TechStack() {
                 {skill.label}
               </h3>
               <p className="text-xs text-text-muted leading-relaxed">{skill.description}</p>
+              <ul className="mt-3 space-y-1">
+                {skill.highlights.map((item) => (
+                  <li key={item} className="text-[11px] text-text-muted/90 leading-relaxed flex items-center gap-2">
+                    <span
+                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                      style={{ backgroundColor: skill.color }}
+                      aria-hidden="true"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

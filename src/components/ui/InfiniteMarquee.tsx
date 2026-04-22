@@ -9,13 +9,14 @@ interface MarqueeItem {
 
 interface InfiniteMarqueeProps {
   items: MarqueeItem[]
-  speed?: 'slow' | 'normal' | 'fast'
+  speed?: 'ultraSlow' | 'slow' | 'normal' | 'fast'
   reverse?: boolean
   className?: string
 }
 
 const speedMap = {
-  slow: '50s',
+  ultraSlow: '140s',
+  slow: '75s',
   normal: '35s',
   fast: '20s',
 }

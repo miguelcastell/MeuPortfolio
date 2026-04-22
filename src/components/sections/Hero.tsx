@@ -70,10 +70,6 @@ export function Hero() {
         >
           {/* Eyebrow */}
           <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 mb-8">
-            <span className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#334155] bg-[#1E293B]/80 text-xs font-medium text-text-muted">
-              <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
-              Disponível para oportunidades
-            </span>
             <span className="flex items-center gap-1.5 text-xs text-text-muted">
               <MapPin size={12} aria-hidden="true" />
               Toledo, PR — Brasil
@@ -151,9 +147,9 @@ export function Hero() {
             className="flex flex-wrap gap-8 mt-16 pt-8 border-t border-[#334155]/60"
           >
             {[
-              { value: '20+', label: 'Projetos ativos' },
               { value: '1+', label: 'Ano de experiência' },
               { value: 'Python · SQL · ML', label: 'Stack principal' },
+              { value: 'Visão Computacional', label: 'Se aprofundando' },              
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="font-display font-bold text-2xl text-text-main">{stat.value}</div>
