@@ -135,7 +135,7 @@ export function AboutSection() {
             <p className="text-text-muted leading-relaxed mb-8">
               Objetivo:{' '}
               <strong className="text-text-main font-semibold">
-                Senior Data Engineer / Analytics Engineer ou ML Engineer
+                Senior Data Engineer e Data Analytics ou ML Engineer
               </strong>
               , construindo produtos próprios baseados em dados e IA.
             </p>

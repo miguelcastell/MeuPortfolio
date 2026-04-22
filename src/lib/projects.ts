@@ -19,6 +19,7 @@ export interface Project {
   area: 'Data Engineering' | 'Machine Learning' | 'Automation' | 'Database' | 'Web' | 'Other'
   accentColor: string
   year: string
+  problem?: string
 }
 
 export const projects: Project[] = [
@@ -35,6 +36,7 @@ export const projects: Project[] = [
       { label: 'Tipos de anomalias detectadas', value: '12+' },
       { label: 'Formatos de exportação', value: '4' },
     ],
+    problem: 'Pipelines de dados frágeis e sem diagnóstico resultam em decisões baseadas em dados incorretos. A qualidade é o gargalo mais subestimado no ciclo de BI e ML.',
     github: 'https://github.com/miguelcastell/DataGuardian',
     featured: true,
     tier: 1,
@@ -56,6 +58,7 @@ export const projects: Project[] = [
       { label: 'F1-Score na classe fraude', value: '0.87' },
       { label: 'Recall no rótulo minoritário', value: '99.2%' },
     ],
+    problem: 'Fraudes financeiras são raras mas custosas — detectá-las exige lidar com classes altamente desbalanceadas e features específicas de comportamento transacional.',
     github: 'https://github.com/miguelcastell/Analise-Fraude-Financeira',
     featured: true,
     tier: 1,
@@ -77,6 +80,7 @@ export const projects: Project[] = [
       { label: 'Tempo de pipeline completo', value: '< 2min' },
       { label: 'KPIs rastreados automaticamente', value: '8' },
     ],
+    problem: 'Times de negócio perdiam horas consolidando dados de vendas manualmente. A falta de um pipeline confiável atrasava decisões estratégicas.',
     github: 'https://github.com/miguelcastell/PipeFlow',
     featured: true,
     tier: 1,
@@ -87,10 +91,11 @@ export const projects: Project[] = [
   },
   {
     slug: 'banco-loja',
-    title: 'Banco-Loja',
+    title: 'Banco de Dados Eletrônicos',
     description: 'Sistema completo de gestão de pedidos em PostgreSQL com procedures e triggers para automação de fluxo comercial.',
     longDescription:
       'Implementação de um sistema de ordem de compra completo usando PL/pgSQL. Cobre relacionamentos N:N, integridade referencial, procedures com tratamento de erros e triggers para automação de fluxos de negócio.',
+    problem: 'Controlar pedidos de uma loja eletronicamente — do cadastro de produtos ao fechamento do pedido — sem depender de planilhas ou processos manuais.',
     tags: ['SQL', 'PostgreSQL', 'PL/pgSQL', 'Database'],
     stack: ['PostgreSQL', 'PL/pgSQL'],
     metrics: [
@@ -119,6 +124,7 @@ export const projects: Project[] = [
       { label: 'Resolução espacial', value: '10m/px' },
       { label: 'Classes de uso do solo', value: '10' },
     ],
+    problem: 'Classificar uso do solo em larga escala via satélite é inviável manualmente. Modelos supervisionados exigem labels — clustering permite descobrir padrões sem anotação humana.',
     github: 'https://github.com/miguelcastell/EuroSAT-Clustering',
     featured: false,
     tier: 2,
@@ -133,6 +139,7 @@ export const projects: Project[] = [
     description: 'Automação de geração de documentos Word e PDF a partir de planilhas, com interface gráfica em Tkinter.',
     longDescription:
       'Ferramenta desktop que elimina horas de trabalho manual na criação de documentos padronizados. Lê dados de spreadsheets, aplica templates Word e exporta documentos finalizados em lote.',
+    problem: 'Criar dezenas de atas manualmente é lento e sujeito a erros — o gerador automatiza todo o processo em lote a partir de uma planilha.',
     tags: ['Automação', 'Python', 'GUI', 'Tkinter'],
     stack: ['Python', 'Tkinter', 'python-docx', 'openpyxl'],
     metrics: [
@@ -154,6 +161,7 @@ export const projects: Project[] = [
     description: 'Plataforma web de gestão farmacêutica com controle de pacientes, atendimentos, medicamentos e unidades de saúde.',
     longDescription:
       'Vitally centraliza operações farmacêuticas em um único sistema: cadastro de pacientes com histórico de atendimentos, gestão de farmacêuticos com validação de CRF, controle de medicamentos e dashboard analítico com métricas em tempo real. Exporta relatórios em PDF e CSV.',
+    problem: 'Farmácias e clínicas gerenciam pacientes, atendimentos e medicamentos em sistemas fragmentados — o Vitally unifica toda a gestão farmacêutica em um único painel.',
     tags: ['Web', 'PHP', 'MySQL', 'Dashboard'],
     stack: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap 5', 'HTML5', 'CSS3'],
     metrics: [
@@ -171,10 +179,11 @@ export const projects: Project[] = [
   },
   {
     slug: 'setup-my-pc',
-    title: 'SETUP-MY-PC',
+    title: 'SETUP MY PC',
     description: 'Script PowerShell idempotente para instalação automatizada de ambiente de desenvolvimento completo no Windows.',
     longDescription:
       'Script que configura um PC do zero: instala programas via winget, cria estrutura de pastas e define configurações do sistema. Idempotente — pode ser executado múltiplas vezes sem erros.',
+    problem: 'Configurar um PC do zero consome horas instalando programa por programa — o script automatiza tudo em minutos com um único comando.',
     tags: ['PowerShell', 'Automação', 'Windows', 'DevOps'],
     stack: ['PowerShell', 'winget'],
     metrics: [

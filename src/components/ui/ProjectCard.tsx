@@ -75,6 +75,12 @@ export function ProjectCard({ project, variant = 'default', index = 0 }: Project
 
           {/* Content */}
           <div className="p-5 flex flex-col gap-4 flex-1">
+            {project.problem && (
+              <div className="flex gap-2 rounded-lg bg-surface-2 border border-border px-3 py-2">
+                <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest mt-0.5 shrink-0">Problema</span>
+                <p className="text-xs text-text-muted leading-relaxed line-clamp-2">{project.problem}</p>
+              </div>
+            )}
             <p className="text-sm text-text-muted leading-relaxed line-clamp-2">
               {project.description}
             </p>

@@ -8,7 +8,7 @@ import { TechStack } from '@/components/sections/TechStack'
 import { ContactSection } from '@/components/sections/ContactSection'
 
 export const metadata: Metadata = {
-  title: 'Porfólio',
+  title: 'Portfólio',
   description:
     'Portfólio de Miguel Mantoan Castellani — Analista de Sistemas especializado em Engenharia de Dados, Machine Learning e Automação. Transformo dados brutos em disões concretas.',
 }

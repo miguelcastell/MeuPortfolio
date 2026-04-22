@@ -103,13 +103,12 @@ export default async function ProjectPage({ params }: Props) {
             </p>
 
             {/* The problem */}
-            <h2>O Problema</h2>
-            <p>
-              {project.area === 'Data Engineering' &&
-                'Pipelines de dados frágeis e não monitorados resultam em decisões baseadas em dados incorretos. A falta de qualidade é o gargalo mais subestimado no ciclo de BI e ML.'}
-              {project.area === 'Machine Learning' &&
-                'Sistemas de recomendação e classificação genéricos não capturam o comportamento real do usuário. A ausência de personalização reduz drasticamente o engajamento e a precisão preditiva.'}
-            </p>
+            {project.problem && (
+              <>
+                <h2>O Problema</h2>
+                <p>{project.problem}</p>
+              </>
+            )}
 
             {/* Architecture */}
             <h2>Arquitetura & Decisões Técnicas</h2>
