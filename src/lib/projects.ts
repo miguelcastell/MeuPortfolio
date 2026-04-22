@@ -149,6 +149,27 @@ export const projects: Project[] = [
     year: '2024',
   },
   {
+    slug: 'vitally',
+    title: 'Vitally',
+    description: 'Plataforma web de gestão farmacêutica com controle de pacientes, atendimentos, medicamentos e unidades de saúde.',
+    longDescription:
+      'Vitally centraliza operações farmacêuticas em um único sistema: cadastro de pacientes com histórico de atendimentos, gestão de farmacêuticos com validação de CRF, controle de medicamentos e dashboard analítico com métricas em tempo real. Exporta relatórios em PDF e CSV.',
+    tags: ['Web', 'PHP', 'MySQL', 'Dashboard'],
+    stack: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap 5', 'HTML5', 'CSS3'],
+    metrics: [
+      { label: 'Módulos de gestão', value: '6' },
+      { label: 'Formatos de exportação', value: '2 (PDF, CSV)' },
+      { label: 'Padrão arquitetural', value: 'MVC' },
+    ],
+    github: 'https://github.com/sd-plataforma-de-gestao/gestao-servicos-repo',
+    featured: false,
+    tier: 2,
+    status: 'completed',
+    area: 'Web',
+    accentColor: '#14B8A6',
+    year: '2025',
+  },
+  {
     slug: 'setup-my-pc',
     title: 'SETUP-MY-PC',
     description: 'Script PowerShell idempotente para instalação automatizada de ambiente de desenvolvimento completo no Windows.',
