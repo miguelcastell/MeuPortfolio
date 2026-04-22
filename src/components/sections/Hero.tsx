@@ -149,7 +149,7 @@ export function Hero() {
             {[
               { value: '1+', label: 'Ano de experiência' },
               { value: 'Python · SQL · ML', label: 'Stack principal' },
-              { value: 'Visão Computacional', label: 'Se aprofundando' },              
+              { value: 'Visão Computacional', label: 'Se aprofundando em' },              
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="font-display font-bold text-2xl text-text-main">{stat.value}</div>
